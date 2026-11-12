@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الجمع في الإنجليزي – واقع معزز</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#1b1650;--bg2:#5b2a86;--bg3:#ff7e5f;--card:rgba(20,14,60,.62);--ink:#fff6e8;--gold:#ffd166;--mint:#6ee7b7;--pink:#ff8fab;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%;font-family:'Baloo Bhaijaan 2',Tahoma,Arial,sans-serif;color:var(--ink);background:var(--bg1)}
+body{background:linear-gradient(170deg,var(--bg1) 0%,var(--bg2) 55%,var(--bg3) 130%) fixed;overflow-x:hidden}
+#cam{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;display:none}
+body.ar #cam{display:block}
+body.ar{background:#000}
+.stars{position:fixed;inset:0;z-index:0;pointer-events:none;
+background-image:radial-gradient(2px 2px at 20px 30px,#fff,transparent),radial-gradient(1.5px 1.5px at 90px 80px,#ffd166,transparent),radial-gradient(2px 2px at 160px 20px,#fff,transparent),radial-gradient(1.5px 1.5px at 60px 150px,#fff,transparent),radial-gradient(2px 2px at 130px 120px,#ff8fab,transparent);
+background-size:200px 200px;opacity:.7}
+body.ar .stars{display:none}
+.wrap{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:14px 14px 28px}
+h1{margin:6px 0 2px;font-size:1.6rem;font-weight:800}
+.sub{margin:0 0 12px;opacity:.85;font-size:.95rem}
+.bar{display:flex;gap:8px;margin-bottom:10px}
+button{font:inherit;color:inherit;border:0;cursor:pointer}
+.pill{flex:1;padding:9px 10px;border-radius:999px;background:var(--card);backdrop-filter:blur(8px);font-weight:500;border:1.5px solid rgba(255,255,255,.25)}
+.pill.on{background:var(--gold);color:#2a1a00;border-color:var(--gold);font-weight:800}
+.stage{position:relative;height:300px;border-radius:28px;overflow:hidden;background:radial-gradient(ellipse at 50% 100%,rgba(255,209,102,.35),transparent 65%),rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.22);backdrop-filter:blur(2px)}
+body.ar .stage{background:transparent;border-color:rgba(255,255,255,.5)}
+.floor{position:absolute;left:10%;right:10%;bottom:14px;height:26px;border-radius:50%;background:rgba(0,0,0,.35);filter:blur(8px)}
+.obj{position:absolute;line-height:1;user-select:none;animation:bob 3s ease-in-out infinite,pop .55s cubic-bezier(.3,1.6,.5,1) backwards;filter:drop-shadow(0 12px 10px rgba(0,0,0,.4))}
+@keyframes bob{50%{transform:translateY(-12px) rotate(4deg)}}
+@keyframes pop{from{transform:scale(0) rotate(-40deg);opacity:0}}
+.word{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0 4px;direction:ltr;font-size:2.6rem;font-weight:800;letter-spacing:.5px}
+.word .art{font-size:1.4rem;opacity:.75;font-weight:500}
+.word .suf{color:var(--mint);animation:pop .5s backwards}
+.ctl{display:flex;gap:10px;margin:6px 0 12px}
+.big{flex:1;padding:14px;border-radius:20px;font-weight:800;font-size:1.15rem;background:linear-gradient(135deg,var(--pink),var(--gold));color:#2a1034;box-shadow:0 8px 0 rgba(0,0,0,.25);transition:transform .1s}
+.big:active{transform:translateY(5px);box-shadow:0 3px 0 rgba(0,0,0,.25)}
+.big.alt{background:var(--card);color:var(--ink);box-shadow:none;border:1.5px solid rgba(255,255,255,.3)}
+.card{padding:14px 16px;border-radius:22px;background:var(--card);backdrop-filter:blur(8px);border:1.5px solid rgba(255,255,255,.18);margin-bottom:12px}
+.card b{color:var(--gold)}
+.card .eg{direction:ltr;text-align:left;margin-top:6px;font-size:1.05rem}
+.words{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;direction:ltr;justify-content:center}
+.chip{padding:6px 12px;border-radius:14px;background:var(--card);border:1.5px solid rgba(255,255,255,.2);font-size:1.05rem}
+.chip.on{background:var(--mint);color:#06281c;border-color:var(--mint);font-weight:800}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;direction:ltr;margin-top:10px}
+.opt{padding:12px 4px;border-radius:16px;background:rgba(255,255,255,.12);font-size:1.15rem;font-weight:800;border:1.5px solid rgba(255,255,255,.25)}
+.opt.ok{background:var(--mint);color:#06281c}.opt.no{background:#ff6b6b;color:#fff}
+.hide{display:none}
+#msg{min-height:1.4em;margin-top:8px;font-weight:800}
+@media (prefers-reduced-motion:reduce){.obj,.word .suf{animation:none}}
+</style>
+</head>
+<body>
+<video id="cam" autoplay playsinline muted></video>
+<div class="stars"></div>
+<div class="wrap">
+  <h1>الجمع بإضافة s</h1>
+  <p class="sub">الصف الأول المتوسط · اضغط على الزر وشاهد الأشياء تتكاثر أمامك</p>
+
+  <div class="bar">
+    <button class="pill on" id="tabLearn">تعلّم</button>
+    <button class="pill" id="tabQuiz">اختبر نفسك</button>
+    <button class="pill" id="camBtn">📷 الكاميرا</button>
+  </div>
+
+  <div id="learn">
+    <div class="stage" id="stage"><div class="floor"></div></div>
+    <div class="word" id="word"></div>
+    <div class="ctl">
+      <button class="big alt" id="one">واحد</button>
+      <button class="big" id="many">أكثر من واحد ✨</button>
+    </div>
+    <div class="card" id="rule"></div>
+    <div class="words" id="chips"></div>
+  </div>
+
+  <div id="quiz" class="hide">
+    <div class="stage" id="qstage"><div class="floor"></div></div>
+    <div class="card" style="margin-top:12px">اختر الجمع الصحيح لـ <b id="qw" dir="ltr"></b>
+      <div class="opts" id="opts"></div>
+      <div id="msg"></div>
+    </div>
+    <button class="big" id="next" style="width:100%">السؤال التالي</button>
+    <p style="text-align:center;margin:10px 0 0">النتيجة: <b id="score">0</b> / <b id="total">0</b></p>
+  </div>
+</div>
+
+<script>
+const W=[
+ {w:'book',e:'📖',t:'s'},{w:'cat',e:'🐱',t:'s'},{w:'apple',e:'🍎',t:'s'},{w:'pen',e:'🖊️',t:'s'},
+ {w:'box',e:'📦',t:'es'},{w:'bus',e:'🚌',t:'es'},{w:'watch',e:'⌚',t:'es'},
+ {w:'baby',e:'👶',t:'ies'},{w:'city',e:'🏙️',t:'ies'}
+];
+const plural=o=>o.t==='ies'?o.w.slice(0,-1)+'ies':o.w+o.t;
+const art=w=>/^[aeiou]/.test(w)?'an':'a';
+const RULES={
+ s:'القاعدة العامة: نضيف <b>s</b> في آخر الكلمة.',
+ es:'إذا انتهت الكلمة بـ <b>s, x, ch, sh</b> نضيف <b>es</b>.',
+ ies:'إذا انتهت الكلمة بحرف <b>y</b> قبله حرف ساكن، نحذف y ونضيف <b>ies</b>.'
+};
+const EG={s:o=>`I have one ${o.w}. I have two ${plural(o)}.`,es:o=>`I see one ${o.w}. I see two ${plural(o)}.`,ies:o=>`I see one ${o.w}. I see two ${plural(o)}.`};
+let cur=0,isMany=false;
+const $=id=>document.getElementById(id);
+
+function fill(stage,o,n){
+  stage.querySelectorAll('.obj').forEach(x=>x.remove());
+  const pos=n===1?[[50,45,110]]:[[22,30,70],[68,22,80],[45,55,95],[16,64,60],[75,62,70]];
+  pos.forEach(([x,y,s],i)=>{
+    const d=document.createElement('div');d.className='obj';d.textContent=o.e;
+    d.style.cssText=`left:${x}%;top:${y}%;font-size:${s}px;margin:-${s/2}px 0 0 -${s/2}px;animation-delay:${i*.15}s,${i*.08}s`;
+    stage.appendChild(d);
+  });
+}
+function render(){
+  const o=W[cur];
+  fill($('stage'),o,isMany?5:1);
+  const w=$('word');
+  if(isMany){
+    const base=o.t==='ies'?o.w.slice(0,-1):o.w, suf=o.t==='ies'?'ies':o.t;
+    w.innerHTML=`<span>${base}</span><span class="suf">${suf}</span>`;
+  }else w.innerHTML=`<span class="art">${art(o.w)}</span><span>${o.w}</span>`;
+  $('one').classList.toggle('alt',isMany);$('many').classList.toggle('alt',!isMany);
+  $('rule').innerHTML=isMany?`${RULES[o.t]}<div class="eg">${EG[o.t](o)}</div>`:'هذا مفرد: شيء واحد فقط. اضغط «أكثر من واحد» لتشاهد الجمع.';
+  document.querySelectorAll('.chip').forEach((c,i)=>c.classList.toggle('on',i===cur));
+}
+W.forEach((o,i)=>{const c=document.createElement('button');c.className='chip';c.textContent=o.w;
+  c.onclick=()=>{cur=i;render()};$('chips').appendChild(c)});
+$('one').onclick=()=>{isMany=false;render()};
+$('many').onclick=()=>{isMany=true;render()};
+
+/* Quiz */
+let q,score=0,total=0,locked=false;
+function newQ(){
+  locked=false;$('msg').textContent='';
+  q=W[Math.floor(Math.random()*W.length)];
+  const right=plural(q);
+  const wrong=new Set();
+  if(q.t==='ies'){wrong.add(q.w+'s');wrong.add(q.w+'es')}
+  else if(q.t==='es'){wrong.add(q.w+'s');wrong.add(q.w+'ies')}
+  else{wrong.add(q.w+'es');wrong.add(q.w+'ies')}
+  const all=[right,...wrong].sort(()=>Math.random()-.5);
+  $('qw').textContent=q.w;fill($('qstage'),q,1);
+  $('opts').innerHTML='';
+  all.forEach(a=>{const b=document.createElement('button');b.className='opt';b.textContent=a;
+    b.onclick=()=>{
+      if(locked)return;locked=true;total++;
+      if(a===right){score++;b.classList.add('ok');$('msg').textContent='أحسنت! 🎉';fill($('qstage'),q,5)}
+      else{b.classList.add('no');$('msg').textContent='الجواب الصحيح: '+right;
+        [...$('opts').children].forEach(x=>{if(x.textContent===right)x.classList.add('ok')})}
+      $('score').textContent=score;$('total').textContent=total;
+    };$('opts').appendChild(b)});
+}
+$('next').onclick=newQ;
+function tab(quiz){
+  $('learn').classList.toggle('hide',quiz);$('quiz').classList.toggle('hide',!quiz);
+  $('tabLearn').classList.toggle('on',!quiz);$('tabQuiz').classList.toggle('on',quiz);
+  if(quiz)newQ();
+}
+$('tabLearn').onclick=()=>tab(false);$('tabQuiz').onclick=()=>tab(true);
+
+/* Camera AR */
+let stream=null;
+$('camBtn').onclick=async()=>{
+  if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;document.body.classList.remove('ar');$('camBtn').classList.remove('on');return}
+  try{
+    stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'},audio:false});
+    $('cam').srcObject=stream;document.body.classList.add('ar');$('camBtn').classList.add('on');
+  }catch(e){
+    $('camBtn').textContent='📷 غير متاح';
+    setTimeout(()=>$('camBtn').textContent='📷 الكاميرا',2500);
+  }
+};
+render();
+</script>
+</body>
+</html>
